@@ -11,20 +11,20 @@ Configure a blank subscription with the basics
 az config set defaults.location=uksouth
 ```
 
-## Manually created
+## Manually created pre-req
 
-### util rg
+### Utility Resource Group
 ```
  az group create -n util --tags creationSource=manual
 ```
 
-### utilstorage
+### Utility Storage Account
 
 ```
 az storage account create -g util -n lcmgutilstorage --tags creationSource=manual --sku Standard_LRS
 ```
 
-### terraform container
+### Terraform container
 
 ```
 az storage container create  --account-name lcmgutilstorage -n terraform --auth-mode login
